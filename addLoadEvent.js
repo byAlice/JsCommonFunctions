@@ -1,7 +1,7 @@
 /**
  * Created by lenovo on 2016/5/29.
  */
-/*“≥√Êº”‘ÿ*/
+/*È°µÈù¢Âä†ËΩΩ*/
 function addLoadEvent(func){
     var oldonload = window.onload;
     if(typeof window.onload != "function"){
@@ -14,5 +14,5 @@ function addLoadEvent(func){
         }
     }
 }
-addLoadEvent(firstFunction);
-addLoadEvent(secondFunction);
+/*addLoadEvent(firstFunction);
+addLoadEvent(secondFunction);*/
