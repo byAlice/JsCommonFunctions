@@ -5,3 +5,5 @@
 * inSertAfter.js ： inSertAfter（）函数
 
 * getByClass.js : 使用className选择元素
+
+* move.js : 多物体运动框架
