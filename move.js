@@ -2,7 +2,7 @@
  * Created by alice on 2016/7/4.
  */
 /*
- *运动框架
+ *链式运动框架
  * */
 
 /*由于offset是盒子模型的大小，易出bug，故使用currentStyle，这里需要做兼容*/
@@ -14,14 +14,14 @@ function getStyle(obj, name) {
         return getComputedStyle(obj, false)[name];
     }
 }
-function startMove(obj, attr, iTarget) {
+function startMove(obj, attr, iTarget,fnend) {
     clearInterval(obj.timer);
 
     obj.timer = setInterval(function () {
 
             var cur = 0;
             if (attr == 'opacity') {
-                cur = Math.round(parseInt(getStyle(obj, attr)) * 100);   //Math.round（）四舍五入
+                cur = Math.round(parseFloat(getStyle(obj, attr)) * 100);   //Math.round（）四舍五入
             }
             else {
                 cur = parseInt(getStyle(obj, attr));
@@ -32,6 +32,10 @@ function startMove(obj, attr, iTarget) {
 
             if (cur == iTarget) {
                 clearInterval(obj.timer);
+                
+                if(fnend){
+                    fnend();
+                }   //回调函数
             }
             else {
                 if (attr == 'opacity') {
