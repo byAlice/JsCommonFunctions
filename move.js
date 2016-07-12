@@ -14,7 +14,7 @@ function getStyle(obj, name) {
         return getComputedStyle(obj, false)[name];
     }
 }
-function startMove(obj, attr, iTarget，fnend) {
+function startMove(obj, attr, iTarget, fnend) {
     clearInterval(obj.timer);
 
     obj.timer = setInterval(function () {
