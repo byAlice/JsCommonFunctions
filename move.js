@@ -26,7 +26,7 @@ function startMove(obj, attr, iTarget，fnend) {
             else {
                 cur = parseInt(getStyle(obj, attr));
             }
-            var speed = (iTarget - cur) / 6;
+            var speed = (iTarget - cur) / 4;
 
             speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
 
