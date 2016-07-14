@@ -14,11 +14,8 @@ function getStyle(obj, name) {
         return getComputedStyle(obj, false)[name];
     }
 }
-<<<<<<< HEAD
+
 function startMove(obj, attr, iTarget, fnend) {
-=======
-function startMove(obj, attr, iTarget,fnend) {
->>>>>>> 98dbdd6ae6e4d3603118abe5461336a6610af97f
     clearInterval(obj.timer);
 
     obj.timer = setInterval(function () {
@@ -36,14 +33,9 @@ function startMove(obj, attr, iTarget,fnend) {
 
             if (cur == iTarget) {
                 clearInterval(obj.timer);
-<<<<<<< HEAD
-                if (fnend) {
-                    fnend()
-=======
-                
+
                 if(fnend){
                     fnend();
->>>>>>> 98dbdd6ae6e4d3603118abe5461336a6610af97f
                 }   //回调函数
             }
             else {
