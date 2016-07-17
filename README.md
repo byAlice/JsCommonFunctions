@@ -7,3 +7,5 @@
 * getByClass.js : 使用className选择元素
 
 * move.js : 链式运动框架
+
+* proMove.js : 完美运动框架
