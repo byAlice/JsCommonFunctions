@@ -6,6 +6,9 @@
 
 * getByClass.js : 使用className选择元素
 
+* getPos.js : 获取坐标（包含滚动条滚动距离）
+
 * move.js : 链式运动框架
 
 * proMove.js : 完美运动框架
+
