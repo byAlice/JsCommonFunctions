@@ -1,5 +1,5 @@
 /**
- * Created by lenovo on 2016/5/29.
+ * Created by alice on 2016/5/29.
  */
 /*页面加载*/
 function addLoadEvent(func){

@@ -12,3 +12,6 @@
 
 * proMove.js : 完美运动框架
 
+* myAddEvent.js : 事件绑定兼容性写法
+
+
