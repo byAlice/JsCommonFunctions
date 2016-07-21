@@ -14,4 +14,6 @@
 
 * myAddEvent.js : 事件绑定兼容性写法
 
+* myAjax.js : 一个ajax封装函数
+
 
