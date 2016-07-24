@@ -16,4 +16,6 @@
 
 * myAjax.js : 一个ajax封装函数
 
+* cookie.js : 关于cookie的设置、读取及删除
+
 
