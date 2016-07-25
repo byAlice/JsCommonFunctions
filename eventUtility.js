@@ -5,32 +5,64 @@
 /*
  *跨浏览器兼容性事件处理函数
  * */
-var eventUtility={
-    //添加句柄
-    addHandle:function(element,type,handle){    //element：要操作的对象；type：事件类型（去掉on）；handle：事件处理函数
+var eventUtility = {
+    //添加事件
+    addHandle: function(element, type, handle) { //element：要操作的对象；type：事件类型（去掉on）；handle：事件处理函数
         //firefox、chrome
         if (element.addEventListener) {
-            element.addEventListener(type,handle,false);    //事件冒泡
+            element.addEventListener(type, handle, false); //事件冒泡
         }
         //低版本IE、opera
         else if (attachEvent) {
-            element.attachEvent('on'+type,handle);
+            element.attachEvent('on' + type, handle);
         }
         //不认DOM2级事件事件处理程序的使用DOM0级处理函数
         else {
-            element['on'+type]=handle;
+            element['on' + type] = handle;
+        }
+    }, //这里使用,隔开
+    //删除事件
+    removeHandle: function(element, type, handle) {
+        if (element.removeEventListener) {
+            element.removeEventListener(type, handle, false);
+        } else if (retachEvent) {
+            element.retachEvent('on' + type, handle);
+        } else {
+            element['on' + type] = null;
         }
     },
-    //删除句柄
-    removeHandle:function(element,type,handle){
-        if (element.removeEventListener) {
-            element.removeEventListener(type,handle,false);
+    //获取兼容的事件对象
+    getEvent: function(event) {
+        return event ? event : window.event;
+    },
+    //获取事件类型
+    getType: function(event) {
+        return event.type;
+    },
+    //获取事件来自哪个元素
+    getElement: function(event) {
+        return event.target || event.srcElement;
+    },
+    //阻止事件默认行为
+    preventDefault: function(event) {
+        //chrome,firefox
+        if (event.preventDefault) {
+            event.preventDefault();
         }
-        else if (retachEvent) {
-            element.retachEvent('on'+type,handle);
-        }
+        //IE
         else {
-            element['on'+type]=null;
+            event.returnValue = false;
+        }
+    },
+    //阻止事件冒泡
+    stopPropagation: function(event) {
+        //chrome,firefox
+        if (event.stopPropagation) {
+            event.propagation();
+        }
+        //IE
+        else {
+            event.cancelBubble = true;
         }
     }
 }
@@ -38,6 +70,11 @@ var eventUtility={
 
 /*
 如何使用
-eventUtility.addHandle(btn,'click',showName);
-eventUtility.removeHandle(btn,'click',showName);
+eventUtility.addHandle(btn,'click',showName);       //添加事件
+eventUtility.removeHandle(btn,'click',showName);    //删除事件
+var ev=eventUtility.getEvent(ev);                   //获取兼容的事件对象
+alert(eventUtil.getType(ev);                        //获取事件类型
+alert(eventUtil.getElement(ev).nodeName);           //获取事件来自哪个元素
+eventUtil.preventDefault(ev);                       //阻止事件默认行为
+eventUtil.stopPropagation(ev);                      //阻止事件冒泡
  */

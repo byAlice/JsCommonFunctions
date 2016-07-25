@@ -4,7 +4,7 @@
 
 * cookie.js : 关于cookie的设置、读取及删除
 
-* eventUtility.js : 跨浏览器兼容性事件处理函数（含添加及删除）
+* eventUtility.js : 跨浏览器兼容性事件处理函数（含添加，删除，获取事件对象、类型及目标，以及阻止事件默认行为、事件冒泡）
 
 * getByClass.js : 使用className选择元素
 
