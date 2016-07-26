@@ -1,6 +1,6 @@
 function getByClass(oParent,sClass) {
-    var sResult=[];
-    var aEle=oParent.getElementsByTagName('tag');
+    var aResult=[];
+    var aEle=oParent.getElementsByTagName('*');
 
     for(var i=0;i<aEle.length;i++){
         if (aEle[i].className==sClass) {
@@ -12,5 +12,5 @@ function getByClass(oParent,sClass) {
 
 /**
  * 如何使用
- * var aBox=getByClass(oul,"box")
+ * var aBox=getByClass(oUl,"box");
  */
