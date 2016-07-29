@@ -2,9 +2,8 @@
  * Created by alice on 2016/7/25.
  */
 
-/*
- *跨浏览器兼容性事件处理函数
- * */
+
+// 跨浏览器兼容性事件处理函数
 var eventUtility = {
     //添加事件
     addHandle: function(element, type, handle) { //element：要操作的对象；type：事件类型（去掉on）；handle：事件处理函数
@@ -73,8 +72,8 @@ var eventUtility = {
 eventUtility.addHandle(btn,'click',showName);       //添加事件
 eventUtility.removeHandle(btn,'click',showName);    //删除事件
 var ev=eventUtility.getEvent(ev);                   //获取兼容的事件对象
-alert(eventUtility.getType(ev);                        //获取事件类型
-alert(eventUtility.getElement(ev).nodeName);           //获取事件来自哪个元素
-eventUtility.preventDefault(ev);                       //阻止事件默认行为
-eventUtility.stopPropagation(ev);                      //阻止事件冒泡
+alert(eventUtility.getType(ev);                     //获取事件类型
+alert(eventUtility.getElement(ev).nodeName);        //获取事件来自哪个元素
+eventUtility.preventDefault(ev);                    //阻止事件默认行为
+eventUtility.stopPropagation(ev);                   //阻止事件冒泡
  */
