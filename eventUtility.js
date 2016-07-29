@@ -2,7 +2,6 @@
  * Created by alice on 2016/7/25.
  */
 
-
 // 跨浏览器兼容性事件处理函数
 var eventUtility = {
     //添加事件
